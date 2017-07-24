@@ -15,9 +15,16 @@ import { Trade } from '../models/trade';
 @Injectable()
 export class PositionService {
   private headers = new Headers({'Access-Control-Allow-Origin': 'http://localhost:4200'});
+
   private _positionUrl = 'http://localhost:56888/api/positionmonitor/positions'
   private _tradesUrl = 'http://localhost:56888/api/positionmonitor/trades'
   private _securitiesUrl = 'http://localhost:56888/api/positionmonitor/securities'
+
+  // private _positionUrl = 'http://positionserver.azurewebsites.net/api/positionmonitor/positions'
+  // private _tradesUrl = 'http://positionserver.azurewebsites.net/api/positionmonitor/trades'
+  // private _securitiesUrl = 'http://positionserver.azurewebsites.net/api/positionmonitor/securities'
+
+
 
   constructor(private _http: Http ) { }
 
