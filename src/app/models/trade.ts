@@ -1,6 +1,6 @@
 export class Trade {
-    securityId : number;
-    tradeDate : Date;
-    price : number;
-    securityName : string;
+    securityId: number;
+    tradeDate: Date;
+    price: number;
+    securityName: string;
 }

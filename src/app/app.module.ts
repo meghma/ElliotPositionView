@@ -24,10 +24,10 @@ import { LoadingModule, ANIMATION_TYPES } from 'ngx-loading';
     AppRoutingModule,
       LoadingModule.forRoot({
         animationType: ANIMATION_TYPES.threeBounce,
-        backdropBackgroundColour: 'rgba(0,0,0,0.1)', 
+        backdropBackgroundColour: 'rgba(0,0,0,0.1)',
         backdropBorderRadius: '4px',
-        primaryColour: '#21618c', 
-        secondaryColour: '#21618c', 
+        primaryColour: '#21618c',
+        secondaryColour: '#21618c',
         tertiaryColour: '#21618c'
     })
   ],

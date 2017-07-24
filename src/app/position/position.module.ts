@@ -10,11 +10,9 @@ import { TradesComponent } from './trades.component';
     CommonModule
   ],
   declarations: [
-    SecuritiesComponent, 
-    PositionsComponent, 
-    TradesComponent],
+   ],
   providers: [
-    
+
   ]
 })
 export class PositionModule { }

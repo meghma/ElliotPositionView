@@ -9,19 +9,19 @@ import { Security } from '../models/security';
 })
 export class SecuritiesComponent implements OnInit {
 
-  pageTitle : string = 'Securities';
+  pageTitle = 'Securities';
   errorMessage: string;
   securities: Security[];
 
-  constructor(private _positionService : PositionService) { }
+  public loading = false;
 
-  ngOnInit() : void {
+  constructor(private _positionService: PositionService) { }
+
+  ngOnInit(): void {
             this._positionService
             .getSecurities()
             .subscribe(securities => {
-              //console.log(typeof securities)
-              //console.log(securities)
-              this.securities = securities
+              this.securities = securities;
             },
                   error => this.errorMessage = <any>error);
   }

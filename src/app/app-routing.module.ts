@@ -5,10 +5,10 @@ import { SecuritiesComponent } from './position/securities.component';
 import { TradesComponent } from './position/trades.component';
 
 const routes: Routes = [
-    {path: '',pathMatch:'full', redirectTo:'positions'},
-    {path: 'positions',component:PositionsComponent},
-    {path: 'trades',component:TradesComponent},
-    {path: 'securities',component:SecuritiesComponent},
+    {path: '', pathMatch: 'full', redirectTo: 'positions'},
+    {path: 'positions', component: PositionsComponent},
+    {path: 'trades', component: TradesComponent},
+    {path: 'securities', component: SecuritiesComponent},
 ];
 
 @NgModule({

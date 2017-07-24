@@ -9,23 +9,21 @@ import { Trade } from '../models/trade';
 })
 export class TradesComponent implements OnInit {
 
-  pageTitle: string = 'Trades';
+  pageTitle = 'Trades';
   errorMessage: string;
   trades: Trade[];
   public loading = false;
-  constructor(private _positionService : PositionService) { }
+  constructor(private _positionService: PositionService) { }
 
-  
+
   ngOnInit() {
         this.loading = true;
         this._positionService.getTrades()
-                .subscribe(trades => 
-                              {
+                .subscribe(trades => {
                                 this.loading = false;
                                 this.trades = trades;
                               },
-                            error => 
-                              {
+                            error => {
                                 this.loading = false;
                                 this.errorMessage = <any>error;
                               }

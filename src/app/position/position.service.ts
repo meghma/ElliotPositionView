@@ -20,9 +20,9 @@ export class PositionService {
   // private _tradesUrl = 'http://localhost:56888/api/positionmonitor/trades'
   // private _securitiesUrl = 'http://localhost:56888/api/positionmonitor/securities'
 
-  private _positionUrl = 'http://positionserver.azurewebsites.net/api/positionmonitor/positions'
-  private _tradesUrl = 'http://positionserver.azurewebsites.net/api/positionmonitor/trades'
-  private _securitiesUrl = 'http://positionserver.azurewebsites.net/api/positionmonitor/securities'
+  private _positionUrl = 'http://positionserver.azurewebsites.net/api/positionmonitor/positions';
+  private _tradesUrl = 'http://positionserver.azurewebsites.net/api/positionmonitor/trades';
+  private _securitiesUrl = 'http://positionserver.azurewebsites.net/api/positionmonitor/securities';
 
 
 
@@ -30,26 +30,23 @@ export class PositionService {
 
   getSecurities(): Observable<Security[]> {
     return this._http.get(this._securitiesUrl)
-    .map((response:Response) => <Security[]> JSON.parse(response.json()))
-    //.do(data => console.log('getSecurities: ' +  JSON.stringify(data)))
+    .map((response: Response) => <Security[]> JSON.parse(response.json()))
     .catch(this.handleError);
   }
 
   getTrades(): Observable<Trade[]> {
     return this._http.get(this._tradesUrl)
-    .map((response:Response) => <Trade[]> JSON.parse(response.json()))
-    //.do(data => console.log('getTrades: ' +  JSON.stringify(data)))
+    .map((response: Response) => <Trade[]> JSON.parse(response.json()))
     .catch(this.handleError);
   }
 
   getPositions(): Observable<Position[]> {
     return this._http.get(this._positionUrl)
-    .map((response:Response) => <Position[]>JSON.parse(response.json()))
-    //.do(data => console.log('getPositions: ' +  JSON.stringify(data)))
+    .map((response: Response) => <Position[]>JSON.parse(response.json()))
     .catch(this.handleError);
   }
 
-  private handleError(error: any) : Observable<any>{
+  private handleError(error: any): Observable<any> {
     console.error(error);
     return Observable.throw(error.json().error || 'Server error');
   }

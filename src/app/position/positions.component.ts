@@ -8,27 +8,23 @@ import { Position } from '../models/position';
 })
 export class PositionsComponent implements OnInit {
 
-  pageTitle: string = 'Positions';
+  pageTitle = 'Positions';
   errorMessage: string;
 
   positions: Position[];
 
   public loading = false;
 
-  constructor(private _positionService : PositionService) { }
-  
+  constructor(private _positionService: PositionService) { }
+
     ngOnInit() {
         this.loading = true;
         this._positionService.getPositions()
-                .subscribe((positions:Position[])  => 
-                {
-                  //console.log(typeof positions)
-                  //console.log(positions)
+                .subscribe((positions: Position[])  =>  {
                   this.loading = false;
                   this.positions = positions;
                 },
-                (error:any) => 
-                {
+                (error: any) => {
                   this.loading = false;
                   this.errorMessage = <any>error;
                 });

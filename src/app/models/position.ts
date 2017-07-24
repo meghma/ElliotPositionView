@@ -1,17 +1,17 @@
 export class Position {
-    securityId : number;
-    securityName : string;
-    tradeCount : number;
-    avgPrice : number;
-    quantity : number;
+    securityId: number;
+    securityName: string;
+    tradeCount: number;
+    avgPrice: number;
+    quantity: number;
 
 
     constructor () {
-        
+
     }
 
-    public calcMarketValue() : number {
+    public calcMarketValue(): number {
         return this.avgPrice * this.quantity;
     }
-    
+
 }
