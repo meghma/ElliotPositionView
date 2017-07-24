@@ -1,0 +1,29 @@
+<div>
+  <h4>
+    {{pageTitle}}
+  </h4>
+  <ngx-loading [show]="loading"></ngx-loading>
+  <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped"
+            *ngIf="trades && trades.length">
+        <thead class="thead-inverse">
+          <tr>
+              <th>Trade Date</th>
+              <th>Security Id</th>
+              <th>Price</th>
+              <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let trade of trades">
+              <td>{{ trade.tradeDate | date: "dd/MM/yyyy"}}</td>
+              <td>{{ trade.securityId }}</td>
+              <td>{{ trade.price | currency:"USD":true:"1.2-2"}}</td>
+              <td>{{ trade.quantity }}</td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+</div>
+

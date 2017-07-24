@@ -1,0 +1,32 @@
+<div>
+  <h4>
+    {{pageTitle}}
+  </h4>
+  <ngx-loading [show]="loading"></ngx-loading>
+  <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped"
+            *ngIf="positions && positions.length">
+        <thead class="thead-inverse">
+          <tr>
+              <th>Security Id</th>
+              <th>Security Name</th>
+              <th>Number of Trades</th>
+              <th>Quantity</th>
+              <th>Average Price</th>
+              <th>Market Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let position of positions">
+              <td>{{ position.securityId }}</td>
+              <td>{{ position.securityName }}</td>
+              <td>{{ position.tradeCount }}</td>
+              <td>{{ position.quantity }}</td>
+              <td>{{ position.avgPrice | currency:"USD":true:"1.2-2"}}</td>
+              <td>{{ position.quantity * position.avgPrice | currency:"USD":true:"1.2-2"}}</td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+</div>
