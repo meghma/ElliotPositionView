@@ -7,10 +7,9 @@ export class Position {
 
 
     constructor () {
-
     }
 
-    public calcMarketValue(): number {
+    public get marketValue(): number {
         return this.avgPrice * this.quantity;
     }
 

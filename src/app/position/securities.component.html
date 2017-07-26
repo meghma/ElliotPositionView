@@ -1,9 +1,7 @@
-<h4>
-  {{pageTitle}}
-</h4>
-<ngx-loading [show]="loading"></ngx-loading>
-<div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
-<div class="table-responsive">
+<div>
+  <ngx-loading [show]="loading"></ngx-loading>
+  <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
+  <div class="table-responsive">
   <table class="table table-bordered table-striped"
           *ngIf="securities && securities.length">
       <thead class="thead-inverse">

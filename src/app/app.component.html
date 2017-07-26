@@ -3,10 +3,10 @@
   {{pageTitle}}
 </h1>
 <nav>
-  <ul class="nav nav-pills">
-    <li class="nav-item"><a class="nav-link" href=""[routerLink]="['/positions']">Positions</a></li>
-    <li class="nav-item"><a class="nav-link" href=""[routerLink]="['/trades']">Trades</a></li>
-    <li class="nav-item"><a class="nav-link" href=""[routerLink]="['/securities']">Securities</a></li>
+  <ul class="nav nav-tabs">
+    <li class="nav-item active"><a [routerLink]="['/positions']">Positions</a></li>
+    <li class="nav-item"><a [routerLink]="['/trades']">Trades</a></li>
+    <li class="nav-item"><a [routerLink]="['/securities']">Securities</a></li>
   </ul>
 </nav>
 <router-outlet></router-outlet>

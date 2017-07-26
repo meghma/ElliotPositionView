@@ -1,7 +1,4 @@
 <div>
-  <h4>
-    {{pageTitle}}
-  </h4>
   <ngx-loading [show]="loading"></ngx-loading>
   <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
   <div class="table-responsive">
@@ -24,7 +21,7 @@
               <td>{{ position.tradeCount }}</td>
               <td>{{ position.quantity }}</td>
               <td>{{ position.avgPrice | currency:"USD":true:"1.2-2"}}</td>
-              <td>{{ position.quantity * position.avgPrice | currency:"USD":true:"1.2-2"}}</td>
+              <td>{{ position.marketValue | currency:"USD":true:"1.2-2"}}</td>
           </tr>
         </tbody>
     </table>
