@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {PositionService} from './position.service';
+import {TradeService} from './trade.service';
 import { Trade } from '../models/trade';
 
 @Component({
@@ -13,12 +13,12 @@ export class TradesComponent implements OnInit {
   errorMessage: string;
   trades: Trade[];
   public loading = false;
-  constructor(private _positionService: PositionService) { }
+  constructor(private _tradeService: TradeService) { }
 
 
   ngOnInit() {
         this.loading = true;
-        this._positionService.getTrades()
+        this._tradeService.getTrades()
                 .subscribe(trades => {
                                 this.loading = false;
                                 this.trades = trades;

@@ -10,9 +10,7 @@ export class PositionsComponent implements OnInit {
 
   pageTitle = 'Positions';
   errorMessage: string;
-
   positions: Position[];
-
   public loading = false;
 
   constructor(private _positionService: PositionService) { }
@@ -29,5 +27,4 @@ export class PositionsComponent implements OnInit {
                   this.errorMessage = <any>error;
                 });
     }
-
 }

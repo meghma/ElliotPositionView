@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
@@ -13,15 +12,16 @@ import { Trade } from '../models/trade';
 
 
 @Injectable()
-export class PositionService {
-  //private _positionUrl = 'http://localhost:54971/api/positionmonitor/positions';
-  private _positionUrl = 'http://positionserver.azurewebsites.net/api/positionmonitor/positions';
+export class TradeService {
+
+  //private _tradesUrl = 'http://localhost:54971/api/positionmonitor/trades';
+  private _tradesUrl = 'http://positionserver.azurewebsites.net/api/positionmonitor/trades';
 
   constructor(private _http: Http ) { }
 
-  getPositions(): Observable<Position[]> {
-    return this._http.get(this._positionUrl)
-    .map((response: Response) => <Position[]> JSON.parse(response.json()))
+  getTrades(): Observable<Trade[]> {
+    return this._http.get(this._tradesUrl)
+    .map((response: Response) => <Trade[]> JSON.parse(response.json()))
     .catch(this.handleError);
   }
 

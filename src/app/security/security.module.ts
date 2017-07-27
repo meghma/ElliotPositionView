@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PositionsComponent } from './positions.component';
-
+import { SecuritiesComponent } from './securities.component';
 
 
 
@@ -10,10 +9,10 @@ import { PositionsComponent } from './positions.component';
     CommonModule
   ],
   declarations: [
-    PositionsComponent
-   ],
+    SecuritiesComponent
+  ],
   providers: [
 
   ]
 })
-export class PositionModule { }
+export class SecurityModule { }
