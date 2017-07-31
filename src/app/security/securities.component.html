@@ -1,7 +1,7 @@
 <div>
   <ngx-loading [show]="loading"></ngx-loading>
   <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
-  <div class="table-responsive">
+  <!--div class="table-responsive">
   <table class="table table-bordered table-striped"
           *ngIf="securities && securities.length">
       <thead class="thead-inverse">
@@ -20,10 +20,10 @@
             <td>{{ security.sector }}</td>
         </tr>
       </tbody>
-  </table>
-  <!--div>
-    <ag-grid-angular #agGrid style="width: 100%; height: 200px;" class="ag-fresh"
-                 [gridOptions]="gridOptions">
-    </ag-grid-angular>
-  </div-->
+  </table-->
+  <div style="width: 800px;">
+      <ag-grid-angular style="width: 100%; height: 350px;" class="ag-fresh"
+                      [gridOptions]="gridOptions">
+      </ag-grid-angular>
+  </div>
 </div>
